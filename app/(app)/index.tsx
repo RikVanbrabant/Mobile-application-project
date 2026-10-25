@@ -5,6 +5,7 @@ import { Text } from '../../src/components/primitives/Text';
 import { EmptyState } from '../../src/components/primitives/EmptyState';
 import { StyledButton } from '../../src/components/StyledButton';
 import {Badge} from "@/components/primitives";
+import { colors } from '../../src/theme';
 
 export default function HomeScreen() {
   const { user, logout } = useAuthStore();
@@ -12,7 +13,7 @@ export default function HomeScreen() {
   return (
     <Screen padding="lg">
       <Stack gap="lg">
-        <Text size="xl" weight="bold">
+        <Text size="xl" weight="bold" color={colors.alert}>
           {user !== null ? `Welcome, ${user.name}` : 'Welcome'}
         </Text>
         <Text>Your items will appear here once you connect Supabase.</Text>

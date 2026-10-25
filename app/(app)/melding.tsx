@@ -10,11 +10,9 @@ import { PhotoPlaceholder } from '../../src/components/PhotoPlaceholder';
 import { StyledButton } from '../../src/components/StyledButton';
 import { colors } from '../../src/theme';
 
-/** Screen 5 – what other users in the same municipality see. */
 export default function MeldingScreen() {
   return (
     <Screen padding="lg">
-      {/* top part and bottom part, pushed apart like margin-top: auto in the mockup */}
       <Stack flex={1} justify="space-between" gap="lg">
         <Stack gap="lg">
           <Row gap="sm">

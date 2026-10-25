@@ -9,6 +9,7 @@ export const colors = {
   sea: '#1F5F8B',
   seaSoft: '#E4EEF5',
   photo: '#DCCDB0',
+  line: '#E6DFD2',
 } as const;
 
 export const fonts = {

@@ -1,10 +1,11 @@
-import { colors, fonts } from '@/theme';
 import { Text as RNText, StyleSheet } from 'react-native';
+import { colors, fonts } from '../../theme';
 
 interface TextProps {
   children: React.ReactNode;
   size?: 'sm' | 'md' | 'lg' | 'xl';
   weight?: 'normal' | 'medium' | 'bold';
+  heading?: boolean;
   color?: string;
   align?: 'left' | 'center' | 'right';
   numberOfLines?: number;
@@ -14,6 +15,7 @@ export function Text({
   children,
   size = 'md',
   weight = 'normal',
+  heading = false,
   color,
   align = 'left',
   numberOfLines,
@@ -23,8 +25,7 @@ export function Text({
       style={[
         styles.base,
         styles[size],
-        styles[weight],
-        { textAlign: align },
+        { fontFamily: fontFor(heading, weight), textAlign: align },
         color !== undefined && { color },
       ]}
       numberOfLines={numberOfLines}
@@ -34,16 +35,17 @@ export function Text({
   );
 }
 
+function fontFor(heading: boolean, weight: 'normal' | 'medium' | 'bold'): string {
+  if (heading) return fonts.heading;
+  if (weight === 'bold') return fonts.bodyBold;
+  if (weight === 'medium') return fonts.bodyMedium;
+  return fonts.body;
+}
+
 const styles = StyleSheet.create({
-  base: {
-    color: colors.ink,
-    fontFamily: fonts.body,
-  },
+  base: { color: colors.ink },
   sm: { fontSize: 12, lineHeight: 16 },
   md: { fontSize: 14, lineHeight: 20 },
-  lg: { fontSize: 16, lineHeight: 24 },
-  xl: { fontSize: 20, lineHeight: 28 },
-  normal: { fontWeight: '400' },
-  medium: { fontWeight: '500' },
-  bold: { fontWeight: '700' },
+  lg: { fontSize: 17, lineHeight: 24 },
+  xl: { fontSize: 28, lineHeight: 32 },
 });

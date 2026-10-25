@@ -1,3 +1,4 @@
+import { colors, fonts } from '@/theme';
 import { Text as RNText, StyleSheet } from 'react-native';
 
 interface TextProps {
@@ -35,7 +36,8 @@ export function Text({
 
 const styles = StyleSheet.create({
   base: {
-    color: '#111827',
+    color: colors.ink,
+    fontFamily: fonts.body,
   },
   sm: { fontSize: 12, lineHeight: 16 },
   md: { fontSize: 14, lineHeight: 20 },

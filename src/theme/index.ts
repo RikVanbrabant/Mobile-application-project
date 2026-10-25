@@ -10,3 +10,10 @@ export const colors = {
   seaSoft: '#E4EEF5',
   photo: '#DCCDB0',
 } as const;
+
+export const fonts = {
+  heading: 'BricolageGrotesque_800ExtraBold',
+  body: 'DMSans_400Regular',
+  bodyMedium: 'DMSans_500Medium',
+  bodyBold: 'DMSans_700Bold',
+} as const;

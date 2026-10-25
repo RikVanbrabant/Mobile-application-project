@@ -10,6 +10,8 @@ export const colors = {
   seaSoft: '#E4EEF5',
   photo: '#DCCDB0',
   line: '#E6DFD2',
+    photoSoft: '#EFE3CB',
+  photoBorder: '#CDBB98',
 } as const;
 
 export const fonts = {

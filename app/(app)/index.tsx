@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Linking, Pressable, StyleSheet } from 'react-native';
 import { router } from 'expo-router';
 import { Card } from '../../src/components/primitives/Card';
@@ -7,9 +8,15 @@ import { Stack } from '../../src/components/primitives/Stack';
 import { Text } from '../../src/components/primitives/Text';
 import { ReportListItem } from '../../src/components/ReportListItem';
 import { StyledButton } from '../../src/components/StyledButton';
+import { getActiveReports } from '../../src/services/reportService';
 import { colors } from '../../src/theme';
-
 export default function HomeScreen() {
+  useEffect(() => {
+    getActiveReports('Koksijde')
+      .then((reports) => console.log('Meldingen uit Supabase:', reports))
+      .catch((error: unknown) => console.error('Supabase-fout:', error));
+  }, []);
+
   return (
     <Screen padding="lg">
       <Stack flex={1} justify="space-between" gap="lg">
@@ -25,6 +32,7 @@ export default function HomeScreen() {
                 <Text size="sm" color={colors.muted}>Jouw kustgemeente</Text>
                 <Text size="lg" weight="bold">Koksijde</Text>
               </Stack>
+              {/* changing the municipality comes later */}
               <StyledButton label="Wijzigen" variant="soft" onPress={() => {}} />
             </Row>
           </Card>

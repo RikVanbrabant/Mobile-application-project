@@ -1,2 +1,2 @@
-export type { User } from './User';
-export type { Item } from './Item';
+export type { User, Role } from './User';
+export { ROLES, isRole } from './User';

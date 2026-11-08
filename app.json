@@ -1,11 +1,12 @@
 {
   "expo": {
-    "name": "UCLL Mobile Starter",
-    "slug": "ucll-mobile-starter",
+    "name": "Strandmaatje",
+    "slug": "strandmaatje",
     "version": "1.0.0",
     "orientation": "portrait",
-    "scheme": "ucllstarter",
-    "userInterfaceStyle": "automatic",
+    "icon": "./assets/icon.png",
+    "scheme": "strandmaatje",
+    "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true
@@ -13,19 +14,20 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#C2410C"
       }
     },
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "name": "Strandmaatje",
+      "shortName": "Strandmaatje",
+      "lang": "nl-BE",
+      "themeColor": "#C2410C",
+      "backgroundColor": "#F6F1E7"
     },
-    "plugins": [
-      "expo-router",
-      "expo-font",
-      "expo-asset"
-    ],
+    "plugins": ["expo-router"],
     "experiments": {
       "typedRoutes": true
     }

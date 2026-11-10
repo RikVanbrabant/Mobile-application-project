@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: colors.sand,
     fontFamily: fonts.body,
-    fontSize: 15,
+    fontSize: 16,
     color: colors.ink,
   },
   inputError: { borderColor: colors.alert },
